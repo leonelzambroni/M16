@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">M16</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_menu_activiy">MenuActiviy</string>
+    <string name="title_activity_beneficios">BeneficiosActivity</string>
+    <string name="title_activity_servicios">ServiciosActivity</string>
+    <string name="title_activity_radio">RadioActivity</string>
+    <string name="title_activity_cursos">CursosActivity</string>
+    <string name="title_activity_contacto_lay">ContactoLay</string>
+    <string name="content_description_logo_M16">LogoM16</string>
+</resources>
