@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     btnServicios =  (Button) findViewById(R.id.btnServicios);
+
         btnServicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnBeneficios = (Button) findViewById(R.id.btnBeneficios);
+
         btnBeneficios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -22,7 +22,7 @@
         android:layout_margin="@dimen/fab_margin"
         android:adjustViewBounds="false"
         android:visibility="visible"
-        app:backgroundTint="@android:color/holo_blue_dark"
+        app:backgroundTint="@color/colorPrimary"
         app:fabSize="normal"
         app:srcCompat="@drawable/ic_whatsapp_white_48dp" />
 
