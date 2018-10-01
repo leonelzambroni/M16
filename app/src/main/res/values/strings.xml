@@ -1,11 +1,12 @@
 <resources>
-    <string name="app_name">M16</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_menu_activiy">MenuActiviy</string>
-    <string name="title_activity_beneficios">BeneficiosActivity</string>
-    <string name="title_activity_servicios">ServiciosActivity</string>
-    <string name="title_activity_radio">RadioActivity</string>
-    <string name="title_activity_cursos">CursosActivity</string>
-    <string name="title_activity_contacto_lay">ContactoLay</string>
-    <string name="content_description_logo_M16">LogoM16</string>
+    <string name="app_name" translatable="false">M16</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="title_activity_menu_activiy" translatable="false">MenuActiviy</string>
+    <string name="title_activity_beneficios" translatable="false">BeneficiosActivity</string>
+    <string name="title_activity_servicios" translatable="false">ServiciosActivity</string>
+    <string name="title_activity_radio" translatable="false">RadioActivity</string>
+    <string name="title_activity_cursos" translatable="false">CursosActivity</string>
+    <string name="title_activity_contacto_lay" translatable="false">ContactoLay</string>
+    <string name="content_description_logo_M16" translatable="false">LogoM16</string>
+    <string name="title_activity_credencial" translatable="false">CredencialActivity</string>
 </resources>

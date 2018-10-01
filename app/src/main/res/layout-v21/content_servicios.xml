@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:background="?attr/colorPrimary"
+        android:background="@color/colorM16"
         android:minHeight="?android:attr/actionBarSize"
         android:theme="?android:attr/actionBarTheme">
         <!-- #4674B7 -->
