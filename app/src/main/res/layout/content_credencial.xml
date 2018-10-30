@@ -9,23 +9,168 @@
     tools:showIn="@layout/activity_credencial">
 
 
+    <ImageView
+        android:id="@+id/splash_imageview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="1dp"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/splash_imageview"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_centerInParent="true"
-            android:scaleType="centerCrop" />
+    <TextView
+        android:id="@+id/txtNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="150dp"
+        android:background="#AA000000"
+        android:padding="12dip"
+        android:text="Nombre:"
+        android:textColor="#ffffffff"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dip"
-            android:layout_centerInParent="true"
-            android:background="#AA000000"
-            android:padding="12dip"
-            android:text="SomeText"
-            android:textColor="#ffffffff" />
+
+    <TextView
+        android:id="@+id/txtContNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="148dp"
+        android:background="#AA000000"
+        android:padding="12dip"
+        android:textColor="#ffffffff"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtContCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="212dp"
+        android:background="#AA000000"
+        android:padding="12dip"
+        android:textColor="#ffffffff"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/txtContNombre"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtContDni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="284dp"
+        android:background="#AA000000"
+        android:padding="12dip"
+        android:textColor="#ffffffff"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/txtContNombre"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtContEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="352dp"
+        android:background="#AA000000"
+        android:padding="12dip"
+        android:textColor="#ffffffff"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/txtContNombre"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:background="#AA000000"
+        android:padding="12dip"
+        android:text="Categoria:"
+        android:textColor="#ffffffff"
+        android:visibility="invisible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtContCategoria"
+        app:layout_constraintStart_toStartOf="@+id/txtDNI"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+
+    <TextView
+        android:id="@+id/txtDNI"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="188dp"
+        android:background="#AA000000"
+        android:padding="12dip"
+        android:text="DNI:"
+        android:textColor="#ffffffff"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtEstado"
+        app:layout_constraintTop_toBottomOf="@+id/etDNI" />
+
+    <TextView
+        android:id="@+id/txtEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="25dp"
+        android:background="#AA000000"
+        android:padding="12dip"
+        android:text="Estado:"
+        android:textColor="#ffffffff"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDNI" />
+
+    <EditText
+        android:id="@+id/etDNI"
+        android:layout_width="214dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="214dp"
+        android:layout_marginBottom="29dp"
+        android:ems="10"
+        android:hint="@string/dni"
+        app:layout_constraintBottom_toTopOf="@+id/txtDNI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGenerar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Generar"
+        app:layout_constraintBottom_toBottomOf="@+id/txtDNI"
+        app:layout_constraintStart_toEndOf="@+id/txtEstado"
+        app:layout_constraintTop_toBottomOf="@+id/txtDNI"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
