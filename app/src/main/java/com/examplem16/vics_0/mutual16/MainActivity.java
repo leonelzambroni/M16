@@ -1,4 +1,4 @@
-package com.examplem16.vics_0.m16;
+package com.examplem16.vics_0.mutual16;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -7,25 +7,29 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.Toast;
+
+import java.io.IOException;
+
+import pl.droidsonroids.gif.AnimationListener;
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private View btnServicios;
-    private View btnBeneficios;
-    private View btnRadio;
-    private View btnCursos;
-    private View btnCredencial;
-    private View btnContacto;
+    private GifImageView btnServicios;
+    private GifImageView btnBeneficios;
+    private GifImageView btnRadio;
+    private GifImageView btnCursos;
+    private GifImageView btnCredencial;
+    private GifImageView btnContacto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //getSupportActionBar().hide();
@@ -33,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
 
 
 
@@ -57,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             });
 
 
-    btnServicios =  (Button) findViewById(R.id.btnServicios);
+    btnServicios =  (GifImageView) findViewById(R.id.btnServicios);
 
         btnServicios.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnBeneficios = (Button) findViewById(R.id.btnBeneficios);
+        btnBeneficios = (GifImageView) findViewById(R.id.btnBeneficios);
 
         btnBeneficios.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(beneficios);
             }
         });
-        btnCursos = (Button) findViewById(R.id.btnCursos);
+        btnCursos = (GifImageView) findViewById(R.id.btnCursos);
         btnCursos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(cursos);
             }
         });
-        btnRadio = (Button) findViewById(R.id.btnRadio);
+        btnRadio = (GifImageView) findViewById(R.id.btnRadio);
         btnRadio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnContacto = (Button) findViewById(R.id.btnContactos);
+        btnContacto = (GifImageView) findViewById(R.id.btnContactos);
         btnContacto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,14 +109,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnCredencial = (Button) findViewById(R.id.btnCredencial);
+        btnCredencial = (GifImageView) findViewById(R.id.btnCredencial);
         btnCredencial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"En construccion",Toast.LENGTH_LONG).show();
-            }
+                Intent credencial = new Intent(MainActivity.this,CredencialActivity.class);
+                startActivity(credencial);            }
         });
-
 
 
 
@@ -156,6 +161,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 
 
 

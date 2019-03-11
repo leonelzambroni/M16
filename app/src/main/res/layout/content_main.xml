@@ -31,28 +31,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:paddingBottom="50dp">
+        android:layout_marginTop="0dp"
+        android:paddingBottom="30dp">
 
-        <Button
-            android:id="@+id/btnBeneficios"
+        <pl.droidsonroids.gif.GifImageView
             style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/btnBeneficios"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="90dp"
-
-            android:layout_marginStart="30dp"
-            android:background="@drawable/beneficiosfinal" />
-
-        <Button
-            android:id="@+id/btnServicios"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/beneficiosff"
+            />
+        <pl.droidsonroids.gif.GifImageView
             style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/btnServicios"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="-10dp"
-            android:background="@drawable/serviciosfinal"
+            android:layout_marginStart="-20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/serviciosf"
 
             />
+
 
 
     </LinearLayout>
@@ -62,25 +64,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="50dp">
-
-        <Button
-            android:id="@+id/btnCredencial"
+        <pl.droidsonroids.gif.GifImageView
             style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/btnCredencial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="90dp"
-
-            android:layout_marginStart="30dp"
-            android:background="@drawable/credencialfinal" />
-
-        <Button
-            android:id="@+id/btnRadio"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/credencialf"
+            />
+        <pl.droidsonroids.gif.GifImageView
             style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/btnRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/radiofinal"
-            android:layout_marginStart="-10dp"
-
+            android:layout_marginStart="-20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/radiof"
             />
 
 
@@ -92,24 +93,25 @@
 
         >
 
-
-        <Button
-            android:id="@+id/btnCursos"
+        <pl.droidsonroids.gif.GifImageView
             style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/btnCursos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="90dp"
-            android:layout_marginStart="30dp"
-            android:background="@drawable/cursosfinal" />
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/cursosf"
+            />
 
-        <Button
-            android:id="@+id/btnContactos"
+        <pl.droidsonroids.gif.GifImageView
             style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/btnContactos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/contactofinal"
-            android:layout_marginStart="-10dp"
-
+            android:layout_marginStart="-20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/contactanosf"
             />
 
 

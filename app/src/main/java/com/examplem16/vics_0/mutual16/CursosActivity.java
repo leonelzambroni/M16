@@ -1,4 +1,4 @@
-package com.examplem16.vics_0.m16;
+package com.examplem16.vics_0.mutual16;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -6,50 +6,28 @@ import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-import com.google.gson.JsonArray;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.jsoup.Jsoup;
-import org.w3c.dom.Document;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import retrofit2.http.Url;
-
-public class ServiciosActivity extends AppCompatActivity {
-
-    private ProgressBar spinner;
+public class CursosActivity extends AppCompatActivity {
 
     private WebView webView;
+    private ProgressBar spinner;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_servicios);
+        setContentView(R.layout.activity_cursos);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
@@ -73,11 +51,11 @@ public class ServiciosActivity extends AppCompatActivity {
         });
 
 
-        spinner = (ProgressBar) findViewById(R.id.progressBarServicios);
+        spinner = (ProgressBar) findViewById(R.id.progressBar1);
         spinner.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(this, R.color.colorPrimary), android.graphics.PorterDuff.Mode.SRC_IN);
 
-        String url = "https://mutual16.org/servicios/";
-        webView = (WebView) findViewById(R.id.webViewServicios);
+        String url = "https://mutual16.org/lic-en-seguridad/";
+        webView = (WebView) findViewById(R.id.webViewCursos);
         webView.setWebViewClient(new MyWebViewClient());
         webView.loadUrl(url);
         webView.getSettings().setJavaScriptEnabled(true);
@@ -89,8 +67,7 @@ public class ServiciosActivity extends AppCompatActivity {
 
 
             @Override
-            public void onLoadResource(WebView view, String url)
-            {
+            public void onLoadResource(WebView view, String url) {
                 try {
                     webView.loadUrl("javascript:(function() { " +
                             "var head = document.getElementsByTagName('header')[0];"
@@ -122,9 +99,10 @@ public class ServiciosActivity extends AppCompatActivity {
                             "    }" + "})()");
 
                     webView.loadUrl("javascript:(function() {" +
-                                    "var element = document.getElementById('page-container')," +
-                                    "padding = getStyle(element, 'paddingTop'); " +
-                                    "element.style.paddingTop = parseInt(padding, 0) + 0 + 'px';" +"})()");
+                            "var element = document.getElementById('page-container')," +
+                            "padding = getStyle(element, 'paddingTop'); " +
+                            "element.style.paddingTop = parseInt(padding, 0) + 0 + 'px';" + "})()");
+
 
 
 
@@ -136,12 +114,12 @@ public class ServiciosActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
+            public void onPageFinished(WebView web, String url) {
+                super.onPageFinished(web, url);
                 spinner.setVisibility(View.INVISIBLE);
-                setTitle(view.getTitle());
+                setTitle(web.getTitle());
 
-            }
+                }
 
 
         }
@@ -150,38 +128,36 @@ public class ServiciosActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(webView.canGoBack())
-        {
+        if (webView.canGoBack()) {
             webView.goBack();
-        }
-        else
-        {
+        } else {
             super.onBackPressed();
         }
     }
 
     private class MyWebViewClient extends WebViewClient {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                String urlHost = Uri.parse(url).getHost();
-                switch (urlHost) {
-                    case "mutual16.org":
-                        return false;
-                    case "www.mutual16.org":
-                        return false;
-                    case "https://mutual16.org":
-                        return false;
-                    default:
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                        startActivity(intent);
-                        return true;
-                }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            String urlHost = Uri.parse(url).getHost();
+            switch (urlHost) {
+                case "mutual16.org":
+                    return false;
+                case "www.mutual16.org":
+                    return false;
+                case "https://mutual16.org":
+                    return false;
+                default:
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                    return true;
             }
+        }
 
         @Override
         public void onPageStarted(WebView webview, String url, Bitmap favicon) {
             super.onPageStarted(webView, url, favicon);
-            spinner.setVisibility(View.VISIBLE); //line 183
+            spinner.setVisibility(View.VISIBLE); //same line with problem in the other activity
 
         }
 
@@ -215,10 +191,7 @@ public class ServiciosActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
 }
+
 
 

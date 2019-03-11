@@ -1,4 +1,4 @@
-package com.examplem16.vics_0.m16;
+package com.examplem16.vics_0.mutual16;
 
 import org.junit.Test;
 

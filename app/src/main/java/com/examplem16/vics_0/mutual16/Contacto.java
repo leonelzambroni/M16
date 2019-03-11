@@ -1,7 +1,6 @@
-package com.examplem16.vics_0.m16;
+package com.examplem16.vics_0.mutual16;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;

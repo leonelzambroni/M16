@@ -1,4 +1,4 @@
-package com.examplem16.vics_0.m16;
+package com.examplem16.vics_0.mutual16;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,16 +1,17 @@
-package com.examplem16.vics_0.m16;
+package com.examplem16.vics_0.mutual16;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.gson.JsonArray;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,10 +30,13 @@ public class CredencialActivity extends AppCompatActivity {
     private View btnGenerar;
     EditText etDNI;
     TextView txtNombre, txtCategoria,txtDNI,txtEstado;
+    ImageView imgTarjeta;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credencial);
+
 
         txtNombre = findViewById(R.id.txtContNombre);
         txtCategoria = findViewById(R.id.txtContCategoria);
@@ -40,31 +44,36 @@ public class CredencialActivity extends AppCompatActivity {
         txtEstado = findViewById(R.id.txtContEstado);
         btnGenerar = findViewById(R.id.btnGenerar);
         etDNI = findViewById(R.id.etDNI);
+        imgTarjeta = findViewById(R.id.imgTarjeta);
 
         btnGenerar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnGenerar.setVisibility(View.INVISIBLE);
-                etDNI.setVisibility(View.INVISIBLE);
-                new ConsultarDatos().execute("http://Mutual16 /CursoAndroid/consulta.php?dni="+etDNI.getText().toString());
-                txtCategoria.setVisibility(View.VISIBLE);
-                txtDNI.setVisibility(View.VISIBLE);
-                txtEstado.setVisibility(View.VISIBLE);
-                txtNombre.setVisibility(View.VISIBLE);
+
+
+                new ConsultarDatos().execute("https://m16.gestionempresacba.com/mobile/consulta.php?DNI=" + etDNI.getText().toString());
+
+
+                //if (txtCategoria.getText()!="") {
+                    btnGenerar.setVisibility(View.INVISIBLE);
+                    etDNI.setVisibility(View.INVISIBLE);
+                    txtCategoria.setVisibility(View.VISIBLE);
+                    txtDNI.setVisibility(View.VISIBLE);
+                    txtEstado.setVisibility(View.VISIBLE);
+                    txtNombre.setVisibility(View.VISIBLE);
+                    imgTarjeta.setVisibility(View.VISIBLE);
+
+                //}
+                //else
+//                {
+  //                  Toast.makeText(getApplicationContext(),"DNI Incorrecto",Toast.LENGTH_LONG).show();
+    //            }
 
             }
         });
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+
     }
 
     private class ConsultarDatos extends AsyncTask<String, Void, String> {
@@ -85,10 +94,12 @@ public class CredencialActivity extends AppCompatActivity {
             JSONArray ja = null;
             try {
                 ja = new JSONArray(result);
-                txtNombre.setText(ja.getString(0));
-                txtCategoria.setText(ja.getString(1));
-                txtDNI.setText(ja.getString(2));
-                txtEstado.setText(ja.getString(3));
+                txtNombre.setText(ja.getString(0) +" " + ja.getString(1));
+                txtCategoria.setText(ja.getString(2));
+                txtDNI.setText(ja.getString(3));
+                txtEstado.setText(ja.getString(4));
+
+
 
             } catch (JSONException e) {
                 e.printStackTrace();
